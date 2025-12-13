@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feat/initial-setup  # Also deploy from the feature branch
   workflow_dispatch:
 
 permissions:
@@ -14,6 +15,7 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
 jobs:
   deploy:
     environment:
@@ -23,24 +25,41 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # 👇 Build steps
+
+      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
           cache: 'npm'
-      - name: Install dependencies
+
+      # Install dependencies in the root
+      - name: Install root dependencies
         run: npm ci
-      - name: Build
-        run: npm run build
-      # 👆 Build steps
+
+      # Install dependencies in the my-website directory
+      - name: Install my-website dependencies
+        run: |
+          cd my-website
+          npm ci
+
+      # Build the Docusaurus site
+      - name: Build Docusaurus site
+        run: |
+          cd my-website
+          npm run build
+
+      # Setup Pages
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
+      # Upload the built site from my-website/build directory
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # 👇 Specify build output path
-          path: build
+          path: my-website/build
+
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
