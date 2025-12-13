@@ -15,15 +15,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://asif-abdulqadir.github.io',
+  url: 'https://Muhammadasif1986.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/text-book-hackathon/',
+  baseUrl: '/ai-diven-book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'asif-abdulqadir', // Usually your GitHub org/user name.
-  projectName: 'text-book-hackathon', // Usually your repo name.
+  organizationName: 'Muhammadasif1986', // Usually your GitHub org/user name.
+  projectName: 'ai-diven-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -43,7 +43,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Change this to your repo.
           editUrl:
-            'https://github.com/asif-abdulqadir/text-book-hackathon/edit/main/',
+            'https://github.com/Muhammadasif1986/ai-diven-book/edit/main/',
         },
         blog: {
           showReadingTime: true,
@@ -53,7 +53,7 @@ const config: Config = {
           },
           // Change this to your repo.
           editUrl:
-            'https://github.com/asif-abdulqadir/text-book-hackathon/edit/main/',
+            'https://github.com/Muhammadasif1986/ai-diven-book/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -93,8 +93,6 @@ const config: Config = {
   ],
 
 
-
-
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -120,7 +118,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Research Blog', position: 'left'},
         {
-          href: 'https://github.com/asif-abdulqadir/text-book-hackathon',
+          href: 'https://github.com/Muhammadasif1986/ai-diven-book',
           label: 'GitHub',
           position: 'right',
         },
@@ -164,7 +162,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/asif-abdulqadir/text-book-hackathon',
+              href: 'https://github.com/Muhammadasif1986/ai-diven-book',
             },
           ],
         },
