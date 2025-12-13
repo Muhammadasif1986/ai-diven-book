@@ -105,11 +105,42 @@
 <!--
   ACTION REQUIRED: Define measurable success criteria.
   These must be technology-agnostic and measurable.
+  Must align with constitution success criteria.
 -->
 
-### Measurable Outcomes
+### Academic Success Criteria
 
-- **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]
-- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
-- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
-- **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+- **SC-001**: All claims verified against authoritative sources
+- **SC-002**: Zero plagiarism detected (Turnitin or similar)
+- **SC-003**: Passes peer fact-checking review
+- **SC-004**: APA citation format 100% correct
+- **SC-005**: Readability score within target range (FK 10-12)
+- **SC-006**: Minimum source count met (15+ sources)
+- **SC-007**: 50%+ citations from peer-reviewed journals
+
+### Technical Success Criteria
+
+- **SC-008**: All tests passing (unit + integration)
+- **SC-009**: Zero critical security vulnerabilities (npm audit / safety)
+- **SC-010**: Lighthouse score >90 (performance, accessibility, SEO)
+- **SC-011**: API documentation complete and accurate
+- **SC-012**: Error handling covers all edge cases
+- **SC-013**: Mobile responsive on iOS and Android
+- **SC-014**: Cross-browser compatible (Chrome, Firefox, Safari, Edge)
+
+### Functional Success Criteria
+
+- **SC-015**: RAG chatbot accurately answers book questions (>85% user satisfaction)
+- **SC-016**: Selected text queries return relevant responses
+- **SC-017**: Personalization adapts content to user level (if implemented)
+- **SC-018**: Translation maintains technical accuracy (if implemented)
+- **SC-019**: Authentication flow works without errors (if implemented)
+- **SC-020**: No data loss or corruption during operations
+
+### User Experience Success Criteria
+
+- **SC-021**: Chatbot responds within 5 seconds
+- **SC-022**: UI is intuitive (usability test with 5+ users)
+- **SC-023**: Clear error messages guide user recovery
+- **SC-024**: Loading states inform users of progress
+- **SC-025**: Accessibility tested with screen reader

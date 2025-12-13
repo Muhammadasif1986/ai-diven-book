@@ -1,0 +1,262 @@
+openapi: 3.0.0
+info:
+  title: K-12 AI Book Audit API
+  description: API for auditing the K-12 AI book for academic and technical compliance
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000/api
+    description: Local development server
+
+paths:
+  /audit/full:
+    post:
+      summary: Run full audit of the book
+      description: Performs comprehensive audit including word count, citations, readability, plagiarism, and technical checks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bookPath:
+                  type: string
+                  description: Path to the book content
+                  example: "./my-website/docs"
+      responses:
+        '200':
+          description: Audit completed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuditResult'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /audit/word-count:
+    post:
+      summary: Audit word count
+      description: Verifies the book has between 3,000-5,000 words
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bookPath:
+                  type: string
+                  description: Path to the book content
+                  example: "./my-website/docs"
+      responses:
+        '200':
+          description: Word count audit completed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WordCountResult'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /audit/citations:
+    post:
+      summary: Audit citations
+      description: Verifies citations meet academic standards (8+ peer-reviewed sources, 2015-2025, APA format)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bookPath:
+                  type: string
+                  description: Path to the book content
+                  example: "./my-website/docs"
+      responses:
+        '200':
+          description: Citation audit completed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CitationResult'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /audit/readability:
+    post:
+      summary: Audit readability
+      description: Checks Flesch-Kincaid readability score (target: grade 10-12)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bookPath:
+                  type: string
+                  description: Path to the book content
+                  example: "./my-website/docs"
+      responses:
+        '200':
+          description: Readability audit completed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReadabilityResult'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    AuditResult:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the audit
+        timestamp:
+          type: string
+          format: date-time
+          description: When the audit was performed
+        status:
+          type: string
+          enum: [pass, fail, warning]
+          description: Overall audit status
+        details:
+          type: object
+          description: Detailed results for each audit category
+          properties:
+            wordCount:
+              $ref: '#/components/schemas/WordCountResult'
+            citations:
+              $ref: '#/components/schemas/CitationResult'
+            readability:
+              $ref: '#/components/schemas/ReadabilityResult'
+            plagiarism:
+              $ref: '#/components/schemas/PlagiarismResult'
+            technical:
+              $ref: '#/components/schemas/TechnicalResult'
+
+    WordCountResult:
+      type: object
+      properties:
+        totalWords:
+          type: number
+          description: Total word count
+        status:
+          type: string
+          enum: [pass, fail]
+          description: Pass if between 3,000-5,000 words
+        requirement:
+          type: string
+          description: Required word count range (3,000-5,000)
+
+    CitationResult:
+      type: object
+      properties:
+        totalCitations:
+          type: number
+          description: Total number of citations found
+        peerReviewedCount:
+          type: number
+          description: Number of peer-reviewed citations
+        withinDateRangeCount:
+          type: number
+          description: Number of citations from 2015-2025
+        apaFormatCorrect:
+          type: number
+          description: Number of citations in proper APA format
+        status:
+          type: string
+          enum: [pass, fail]
+          description: Pass if 8+ peer-reviewed sources from 2015-2025 with proper APA format
+        requirement:
+          type: string
+          description: Minimum 8 peer-reviewed sources from 2015-2025
+
+    ReadabilityResult:
+      type: object
+      properties:
+        score:
+          type: number
+          description: Flesch-Kincaid grade level
+        status:
+          type: string
+          enum: [pass, fail]
+          description: Pass if score is between 10-12
+        requirement:
+          type: string
+          description: Readability grade level between 10-12
+
+    PlagiarismResult:
+      type: object
+      properties:
+        similarityPercent:
+          type: number
+          description: Percentage of content matching other sources
+        status:
+          type: string
+          enum: [pass, fail]
+          description: Pass if similarity is 0%
+        requirement:
+          type: string
+          description: Zero plagiarism tolerance
+
+    TechnicalResult:
+      type: object
+      properties:
+        buildSuccess:
+          type: boolean
+          description: Whether the Docusaurus build succeeded
+        linkCheck:
+          type: object
+          description: Link validation results
+          properties:
+            totalLinks:
+              type: number
+            brokenLinks:
+              type: number
+            status:
+              type: string
+              enum: [pass, fail]
+        accessibility:
+          type: object
+          description: Accessibility validation results
+          properties:
+            wcagLevel:
+              type: string
+            status:
+              type: string
+              enum: [pass, fail]
+        status:
+          type: string
+          enum: [pass, fail]
+          description: Overall technical status
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+        code:
+          type: string
+          description: Error code

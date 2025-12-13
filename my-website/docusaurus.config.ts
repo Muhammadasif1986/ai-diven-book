@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Physical AI & Humanoid Robotics Textbook',
-  tagline: 'Bridging the Digital Brain and the Physical World',
+  title: 'AI Diven Physical AI & Humanoid Robotics',
+  tagline: 'A Comprehensive Guide to Physical AI & Humanoid Robotics',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -15,14 +15,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://Muhammadasif1986.github.io',
+  url: 'https://asif-abdulqadir.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/text-book-hackathon/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Muhammadasif1986', // Usually your GitHub org/user name.
+  organizationName: 'asif-abdulqadir', // Usually your GitHub org/user name.
   projectName: 'text-book-hackathon', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -41,10 +41,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          // Change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/asif-abdulqadir/text-book-hackathon/edit/main/',
         },
         blog: {
           showReadingTime: true,
@@ -52,10 +51,9 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          // Change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/asif-abdulqadir/text-book-hackathon/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -89,10 +87,13 @@ const config: Config = {
     //     // Output directory (relative to build directory)
     //     outputDir: 'pdf',
     //     // Output filename
-    //     outputFile: 'physical-ai-humanoid-robotics-textbook.pdf',
+    //     outputFile: 'ai-diven-book.pdf',
     //   }
-    // ]
+    // ],
   ],
+
+
+
 
   themeConfig: {
     // Replace with your project's social card
@@ -100,10 +101,14 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    // Expose environment variables to client-side code
+    customFields: {
+      NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000',
+    },
     navbar: {
-      title: 'Physical AI & Humanoid Robotics Textbook',
+      title: 'AI Diven Physical AI & Humanoid Robotics Book',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Physical AI & Humanoid Robotics Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -111,11 +116,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Book Chapters',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: 'Research Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/asif-abdulqadir/text-book-hackathon',
           label: 'GitHub',
           position: 'right',
         },
@@ -125,28 +130,28 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Book Content',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Introduction',
               to: '/docs/intro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Resources',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'AI Research',
+              href: 'https://ai.google/research/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Robotics Research',
+              href: 'https://www.ieee-ras.org/',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Physical AI Resources',
+              href: 'https://www.computer.org/',
             },
           ],
         },
@@ -154,12 +159,12 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
+              label: 'Research Blog',
               to: '/blog',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/asif-abdulqadir/text-book-hackathon',
             },
           ],
         },

@@ -12,7 +12,19 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "audit:full": "node scripts/audit/comprehensive-audit.js my-website/docs/",
+    "audit:word-count": "node scripts/audit/word-count.js my-website/docs/",
+    "audit:citations": "node scripts/audit/citation-check.js my-website/docs/",
+    "audit:readability": "node scripts/audit/readability-check.js my-website/docs/",
+    "audit:plagiarism": "node scripts/audit/plagiarism-check.js my-website/docs/",
+    "audit:links": "node scripts/audit/link-validation.js my-website/docs/",
+    "audit:build": "node scripts/audit/build-validation.js my-website/",
+    "audit:ai-applications": "node scripts/audit/ai-applications.js my-website/docs/",
+    "audit:roi": "node scripts/audit/roi-verification.js my-website/docs/",
+    "audit:k12-focus": "node scripts/audit/content-structure-validation.js my-website/docs/",
+    "audit:teacher-workload": "node scripts/audit/teacher-workload-reduction.js my-website/docs/",
+    "audit:student-outcome": "node scripts/audit/student-outcome-improvement.js my-website/docs/"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",

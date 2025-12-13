@@ -31,7 +31,42 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+### Academic Rigor Compliance
+- [ ] All technical decisions verified against authoritative sources
+- [ ] Research methodology follows academic standards
+- [ ] Claims about technology choices are fact-checked and cited
+
+### Technical Excellence Compliance
+- [ ] Code quality standards (Type hints/TypeScript strict mode) addressed
+- [ ] Unit test coverage >80% planned for critical paths
+- [ ] Error handling and logging architecture designed
+- [ ] Security-first approach integrated (authentication, data privacy)
+- [ ] Performance optimization considerations included
+- [ ] Accessibility compliance (WCAG 2.1 AA) addressed
+
+### User-Centered Design Compliance
+- [ ] Mobile-first responsive design approach planned
+- [ ] Progressive enhancement strategy considered
+- [ ] Graceful degradation for feature failures designed
+
+### Technical Constraints Compliance
+- [ ] Frontend technology stack: Docusaurus v3, React 18+, TypeScript
+- [ ] Backend technology stack: FastAPI (Python 3.11+), async/await
+- [ ] Database: Neon Serverless Postgres planned
+- [ ] Vector DB: Qdrant Cloud Free Tier planned (1GB limit)
+- [ ] LLM: OpenAI Agents/ChatKit SDKs planned
+- [ ] Authentication: Better Auth planned
+- [ ] Free tier services only (no paid plans) - budget constraint met
+
+### Performance Standards Compliance
+- [ ] Page Load target: <3 seconds on 3G connection considered
+- [ ] API Response target: <500ms for 95th percentile planned
+- [ ] Chatbot Response target: <5 seconds for RAG queries planned
+
+### Success Criteria Alignment
+- [ ] Technical success criteria considered in design
+- [ ] Functional success criteria mapped to implementation plan
+- [ ] User Experience success criteria addressed
 
 ## Project Structure
 

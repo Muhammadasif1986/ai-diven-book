@@ -150,12 +150,18 @@ Examples of foundational tasks (adjust based on your project):
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] TXXX [P] Documentation updates in docs/
+- [ ] TXXX [P] Documentation updates in docs/ (per constitution: Purpose, responsibilities, input/output specs, dependencies, usage examples, error handling, performance considerations)
 - [ ] TXXX Code cleanup and refactoring
-- [ ] TXXX Performance optimization across all stories
-- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/
-- [ ] TXXX Security hardening
+- [ ] TXXX Performance optimization across all stories (per constitution: <3s load, <500ms API, <5s chatbot response)
+- [ ] TXXX [P] Additional unit tests (if requested) in tests/unit/ (per constitution: >80% coverage for critical paths)
+- [ ] TXXX Security hardening (per constitution: environment variables, HTTPS, input validation, SQL injection prevention, CORS)
 - [ ] TXXX Run quickstart.md validation
+- [ ] TXXX Accessibility compliance check (WCAG 2.1 AA minimum per constitution)
+- [ ] TXXX Academic content citation verification (per constitution: APA 7th edition, 50% peer-reviewed sources)
+- [ ] TXXX Code review checklist completion (per constitution: no hardcoded secrets, error handling, linting passes, academic content cited)
+- [ ] TXXX Pre-commit quality gates verification (linting, type checking, local tests)
+- [ ] TXXX Pre-merge quality gates verification (all tests pass in CI, code review approved, documentation updated, no merge conflicts)
+- [ ] TXXX Ethical guidelines compliance check (transparency, attribution, privacy, bias awareness, accessibility)
 
 ---
 

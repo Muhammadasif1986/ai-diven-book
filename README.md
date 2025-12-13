@@ -1,10 +1,10 @@
-# AI Diven Book
+# AI Diven Physical AI & Humanoid Robotics Book
 
-This is a project for creating an AI-driven book platform.
+This is a project for creating an AI-driven Physical AI & Humanoid Robotics book platform.
 
 ## Overview
 
-This repository contains the codebase for the AI Diven Book project, developed as part of the Q4 Hackathon.
+This repository contains the codebase for the AI Diven Physical AI & Humanoid Robotics Book project, developed as part of the Q4 Hackathon.
 
 ## Features
 

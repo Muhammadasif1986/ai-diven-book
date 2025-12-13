@@ -118,8 +118,6 @@ export function formatReference(citation: Citation): string {
       }
       reference += '.';
       break;
-    default:
-      reference += ` ${citation.title}. ${citation.url ? `Retrieved from ${citation.url}.` : ''}`;
   }
   return reference;
 }

@@ -208,3 +208,12 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Node.js v18+, JavaScript/TypeScript for Docusaurus framework + Docusaurus v3, React 18+, Node.js ecosystem tools for auditing (001-audit-k12-ai-book)
+- File-based (MDX content files), no database required for static site (001-audit-k12-ai-book)
+- Python 3.11+ (FastAPI backend), JavaScript/TypeScript (Docusaurus frontend) + FastAPI, OpenAI Agents SDK, Qdrant, Neon Postgres, Docusaurus v3, React 18+ (002-rag-chatbot-docusaurus)
+- Neon Serverless Postgres (metadata), Qdrant Cloud (vector embeddings), file-based (book content) (002-rag-chatbot-docusaurus)
+
+## Recent Changes
+- 001-audit-k12-ai-book: Added Node.js v18+, JavaScript/TypeScript for Docusaurus framework + Docusaurus v3, React 18+, Node.js ecosystem tools for auditing
